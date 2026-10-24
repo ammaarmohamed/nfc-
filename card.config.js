@@ -13,7 +13,7 @@ window.CARD_CONFIG = {
   meta: {
     title: "Ammar Hussein - Digital Business Card",
     description: "Technical Lead at Aamir Digital | Organizing Secretary, Muslim Association of Meru University. Tap to connect and save contact.",
-    ogImage: "/assets/aistudio/DSC_2945_2dc10b22.jpg",
+    ogImage: "/assets/aistudio/avatar_opt.jpg",
     themeColor: "#06130e"
   },
 
@@ -29,8 +29,8 @@ window.CARD_CONFIG = {
   profile: {
     name: "Ammar Hussein",
     initials: "AH",
-    avatar: "/assets/aistudio/DSC_2945_2dc10b22.jpg",
-    avatarFallback: "/public/assets/aistudio/DSC_2945_2dc10b22.jpg",
+    avatar: "/assets/aistudio/avatar_opt.webp",
+    avatarFallback: "/assets/aistudio/avatar_opt.jpg",
     verified: true,
     
     // Status pill shown at top left
@@ -50,8 +50,8 @@ window.CARD_CONFIG = {
       title: "Organizing Secretary",
       organization: "Muslim Association of Meru University",
       shortOrg: "MAMU",
-      logo: "/assets/aistudio/logo__1__24eed6e2.png",
-      logoFallback: "/public/assets/aistudio/logo__1__24eed6e2.png",
+      logo: "/assets/aistudio/logo_opt.webp",
+      logoFallback: "/assets/aistudio/logo_opt.png",
       url: "https://mamu36673.github.io/MamuWeb/"
     },
 
@@ -151,8 +151,8 @@ window.CARD_CONFIG = {
         type: "link",
         url: "https://mamu36673.github.io/MamuWeb/",
         target: "_blank",
-        logo: "/assets/aistudio/logo__1__24eed6e2.png",
-        logoFallback: "/public/assets/aistudio/logo__1__24eed6e2.png"
+        logo: "/assets/aistudio/logo_opt.webp",
+        logoFallback: "/assets/aistudio/logo_opt.png"
       },
       {
         title: "Muslim Association Instagram",
@@ -160,8 +160,8 @@ window.CARD_CONFIG = {
         type: "link",
         url: "https://instagram.com/muslimassociation.mamu",
         target: "_blank",
-        logo: "/assets/aistudio/logo__1__24eed6e2.png",
-        logoFallback: "/public/assets/aistudio/logo__1__24eed6e2.png",
+        logo: "/assets/aistudio/logo_opt.webp",
+        logoFallback: "/assets/aistudio/logo_opt.png",
         badgeIcon: "fa-brands fa-instagram"
       },
       {
@@ -228,8 +228,8 @@ window.CARD_CONFIG = {
     subtitle: "Point phone camera to open card",
     name: "Ammar Hussein",
     organization: "Muslim Association of Meru Univ.",
-    logo: "/assets/aistudio/logo__1__24eed6e2.png",
-    logoFallback: "/public/assets/aistudio/logo__1__24eed6e2.png"
+    logo: "/assets/aistudio/logo_opt.webp",
+    logoFallback: "/assets/aistudio/logo_opt.png"
   },
 
   // 10. Footer Text
