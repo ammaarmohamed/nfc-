@@ -1,0 +1,8 @@
+{
+  "name": "Ammar Hussein - Digital Business Card",
+  "description": "Modern mobile-first NFC digital business card and link-in-bio for Ammar Hussein, Technical Lead at Aamir Digital and Organizing Secretary at MAMU.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

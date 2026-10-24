@@ -1,0 +1,1138 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Ammar Hussein - Digital Business Card</title>
+    <meta id="metaDescription" name="description" content="Technical Lead at Aamir Digital | Organizing Secretary, Muslim Association of Meru University. Tap to connect and save contact." />
+    
+    <!-- Open Graph & Social Meta -->
+    <meta id="ogTitle" property="og:title" content="Ammar Hussein - Digital Business Card" />
+    <meta id="ogDescription" property="og:description" content="Technical Lead at Aamir Digital | Organizing Secretary, Muslim Association of Meru University" />
+    <meta property="og:type" content="profile" />
+    <meta id="ogImage" property="og:image" content="/assets/aistudio/DSC_2945_2dc10b22.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta id="themeColorMeta" name="theme-color" content="#06130e" />
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- FontAwesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- External Configuration File (Edit card.config.js to change all data) -->
+    <script src="./card.config.js"></script>
+
+    <style>
+      /* ===================================================
+         COLOR PALETTES
+         Theme 1: Emerald & Gold ("Heritage Executive")
+         =================================================== */
+      :root,
+      [data-theme="emerald"] {
+        --bg-base: #06130e;
+        --bg-glow: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.16) 0%, transparent 68%);
+        --bg-glow-spot: rgba(16, 185, 129, 0.12);
+        --bg-surface: #0a1f18;
+        --bg-card: #0e271f;
+        --bg-card-hover: #15382c;
+        --border-subtle: rgba(52, 211, 153, 0.16);
+        --border-hover: rgba(245, 158, 11, 0.45);
+        --accent-emerald: #10b981;
+        --accent-gold: #f59e0b;
+        --text-primary: #f0fdf4;
+        --text-secondary: #cbd5e1;
+        --text-muted: #86efac;
+        --text-sub: #94a3b8;
+        --btn-primary-bg: #10b981;
+        --btn-primary-text: #022c22;
+        --btn-primary-hover: #34d399;
+        --avatar-ring: linear-gradient(180deg, #10b981 0%, #064e3b 60%, #06130e 100%);
+      }
+
+      /* Theme 2: Midnight Sapphire & Cyan ("Aamir Digital Tech") */
+      [data-theme="sapphire"] {
+        --bg-base: #070d17;
+        --bg-glow: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.16) 0%, transparent 68%);
+        --bg-glow-spot: rgba(56, 189, 248, 0.12);
+        --bg-surface: #0c1726;
+        --bg-card: #112137;
+        --bg-card-hover: #19304e;
+        --border-subtle: rgba(56, 189, 248, 0.16);
+        --border-hover: rgba(96, 165, 250, 0.45);
+        --accent-emerald: #38bdf8;
+        --accent-gold: #818cf8;
+        --text-primary: #f8fafc;
+        --text-secondary: #cbd5e1;
+        --text-muted: #7dd3fc;
+        --text-sub: #94a3b8;
+        --btn-primary-bg: #38bdf8;
+        --btn-primary-text: #082f49;
+        --btn-primary-hover: #7dd3fc;
+        --avatar-ring: linear-gradient(180deg, #38bdf8 0%, #1e40af 60%, #070d17 100%);
+      }
+
+      /* Theme 3: Warm Amber & Bronze ("Founder Luxury") */
+      [data-theme="amber"] {
+        --bg-base: #110e0c;
+        --bg-glow: radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.16) 0%, transparent 68%);
+        --bg-glow-spot: rgba(245, 158, 11, 0.12);
+        --bg-surface: #1c1613;
+        --bg-card: #271f1a;
+        --bg-card-hover: #372b24;
+        --border-subtle: rgba(245, 158, 11, 0.18);
+        --border-hover: rgba(251, 191, 36, 0.45);
+        --accent-emerald: #f59e0b;
+        --accent-gold: #fbbf24;
+        --text-primary: #fffbeb;
+        --text-secondary: #e7e5e4;
+        --text-muted: #fcd34d;
+        --text-sub: #a8a29e;
+        --btn-primary-bg: #f59e0b;
+        --btn-primary-text: #451a03;
+        --btn-primary-hover: #fbbf24;
+        --avatar-ring: linear-gradient(180deg, #f59e0b 0%, #78350f 60%, #110e0c 100%);
+      }
+
+      /* Theme 4: Stealth Carbon ("Monochrome Minimalist") */
+      [data-theme="carbon"] {
+        --bg-base: #09090b;
+        --bg-glow: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 68%);
+        --bg-glow-spot: rgba(255, 255, 255, 0.06);
+        --bg-surface: #121215;
+        --bg-card: #18181b;
+        --bg-card-hover: #27272a;
+        --border-subtle: rgba(255, 255, 255, 0.09);
+        --border-hover: rgba(255, 255, 255, 0.25);
+        --accent-emerald: #ffffff;
+        --accent-gold: #a1a1aa;
+        --text-primary: #f4f4f5;
+        --text-secondary: #d4d4d8;
+        --text-muted: #ffffff;
+        --text-sub: #a1a1aa;
+        --btn-primary-bg: #ffffff;
+        --btn-primary-text: #09090b;
+        --btn-primary-hover: #e4e4e7;
+        --avatar-ring: linear-gradient(180deg, #71717a 0%, #27272a 60%, #09090b 100%);
+      }
+
+      body {
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        background-color: var(--bg-base);
+        color: var(--text-primary);
+        -webkit-tap-highlight-color: transparent;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      .palette-glow {
+        background: var(--bg-glow);
+        transition: background 0.3s ease;
+      }
+
+      /* Card tap effect */
+      .tap-card {
+        transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .tap-card:active {
+        transform: scale(0.975);
+      }
+      
+      /* NFC verification ripple */
+      @keyframes nfcPulse {
+        0% { transform: scale(0.95); opacity: 0.8; }
+        50% { transform: scale(1.08); opacity: 0.2; }
+        100% { transform: scale(1.15); opacity: 0; }
+      }
+      .nfc-ring {
+        animation: nfcPulse 2.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+      }
+
+      /* Toast animation */
+      @keyframes toastIn {
+        from { transform: translate(-50%, 20px); opacity: 0; }
+        to { transform: translate(-50%, 0); opacity: 1; }
+      }
+      @keyframes toastOut {
+        from { transform: translate(-50%, 0); opacity: 1; }
+        to { transform: translate(-50%, 20px); opacity: 0; }
+      }
+      .toast-enter {
+        animation: toastIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .toast-exit {
+        animation: toastOut 0.2s ease forwards;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen text-[var(--text-primary)] flex flex-col justify-between selection:bg-emerald-900 selection:text-white relative overflow-x-hidden">
+    <!-- Background Atmosphere Glow -->
+    <div class="fixed inset-0 pointer-events-none palette-glow"></div>
+    <div class="fixed -top-40 left-1/2 -translate-x-1/2 w-96 h-96 blur-3xl rounded-full pointer-events-none transition-colors duration-300" style="background-color: var(--bg-glow-spot);"></div>
+
+    <!-- Main Container: Centered Column -->
+    <main class="w-full max-w-[430px] mx-auto px-5 py-6 sm:py-10 flex-1 flex flex-col justify-center items-center z-10">
+      
+      <!-- Top Action Bar (Status Pill + Palette Theme Picker + Share Button) -->
+      <div class="w-full flex items-center justify-between mb-5 gap-2">
+        <div id="statusPillContainer" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--bg-card)] border border-[var(--border-subtle)] text-xs font-medium text-[var(--text-secondary)] shadow-sm">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent-emerald)] opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-[var(--accent-emerald)]"></span>
+          </span>
+          <span id="statusPillText">NFC Tap Verified</span>
+        </div>
+        
+        <div class="flex items-center gap-2">
+          <!-- Palette Trigger -->
+          <button
+            id="paletteBtn"
+            onclick="openPaletteModal()"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[var(--border-hover)] text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all duration-200 active:scale-95 shadow-sm"
+            aria-label="Change color palette"
+            title="Switch color palette"
+          >
+            <i class="fa-solid fa-palette text-xs text-[var(--accent-gold)]"></i>
+            <span>Theme</span>
+          </button>
+
+          <!-- Share Button -->
+          <button
+            id="shareBtn"
+            onclick="shareCard()"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[var(--border-hover)] text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all duration-200 active:scale-95 shadow-sm"
+            aria-label="Share digital business card"
+          >
+            <i class="fa-solid fa-arrow-up-from-bracket text-[11px]"></i>
+            <span>Share</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 1. Profile Section -->
+      <section class="flex flex-col items-center text-center w-full mb-6 relative z-10">
+        <!-- Circular Profile Picture with Pulsing Aura -->
+        <div class="relative group mb-4">
+          <div class="absolute -inset-1 rounded-full opacity-30 blur-sm pointer-events-none nfc-ring" style="background-color: var(--accent-emerald);"></div>
+          <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 shadow-2xl relative transition-all duration-300" style="background: var(--avatar-ring);">
+            <div class="w-full h-full rounded-full overflow-hidden border-2 relative flex items-center justify-center transition-colors duration-300" style="background-color: var(--bg-surface); border-color: var(--bg-base);">
+              <!-- Profile Photo -->
+              <img
+                id="profileAvatar"
+                src="/assets/aistudio/DSC_2945_2dc10b22.jpg"
+                alt="Profile Avatar"
+                class="w-full h-full object-cover object-[center_14%] transition-transform duration-500 group-hover:scale-105"
+                onerror="this.src='/public/assets/aistudio/DSC_2945_2dc10b22.jpg'; this.onerror=function(){this.style.display='none'; document.getElementById('avatarFallback').classList.remove('hidden');};"
+              />
+              <div id="avatarFallback" class="hidden w-full h-full flex flex-col items-center justify-center text-white font-bold text-2xl tracking-tight" style="background-color: var(--bg-surface);">
+                AH
+              </div>
+            </div>
+          </div>
+          <!-- Verified Badge -->
+          <div id="verifiedBadge" class="absolute bottom-1 right-1 w-7 h-7 rounded-full flex items-center justify-center shadow-lg border-2 transition-colors duration-300" style="background-color: var(--btn-primary-bg); color: var(--btn-primary-text); border-color: var(--bg-base);" title="Verified Card">
+            <i class="fa-solid fa-check text-[11px] font-black"></i>
+          </div>
+        </div>
+
+        <!-- Name -->
+        <h1 id="profileName" class="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] tracking-tight leading-tight mb-2">
+          Ammar Hussein
+        </h1>
+
+        <!-- Primary Dual Tagline -->
+        <p id="profileRoles" class="text-sm sm:text-base text-[var(--text-secondary)] font-medium max-w-sm sm:max-w-md leading-relaxed mb-3">
+          Technical Lead at <span class="font-semibold text-[var(--text-primary)]">Aamir Digital</span> <span class="text-[var(--text-sub)]">|</span> Organizing Secretary, <span class="font-semibold text-[var(--text-primary)]">Muslim Association of Meru University</span>
+        </p>
+
+        <!-- Official Affiliation Badge with Crest -->
+        <div id="affiliationBadgeContainer" class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[var(--bg-card)] border border-[var(--border-subtle)] text-xs text-[var(--text-secondary)] mb-3.5 shadow-sm transition-colors duration-300">
+          <img
+            id="affiliationBadgeLogo"
+            src="/assets/aistudio/logo__1__24eed6e2.png"
+            alt="Organization Logo"
+            class="w-4 h-4 object-contain"
+            onerror="this.src='/public/assets/aistudio/logo__1__24eed6e2.png';"
+          />
+          <span id="affiliationBadgeText" class="text-[11px] font-semibold text-[var(--accent-emerald)]">Muslim Association of Meru University</span>
+        </div>
+
+        <!-- Hook Statement: Purpose & Value Proposition -->
+        <p id="profileHook" class="text-xs sm:text-sm text-[var(--text-sub)] max-w-sm leading-relaxed px-2">
+          Architecting high-scale digital solutions & driving transformative community leadership across Meru and East Africa.
+        </p>
+
+        <!-- Quick Focus Chips -->
+        <div id="focusPillsContainer" class="flex items-center justify-center flex-wrap gap-2 text-[11px] text-[var(--text-sub)] mt-3 font-medium">
+          <!-- Injected dynamically -->
+        </div>
+      </section>
+
+      <!-- QUICK ACTION THUMB DOCK (4 Instant Tap Dials) -->
+      <div id="actionDockContainer" class="w-full grid grid-cols-4 gap-2.5 mb-6">
+        <!-- Rendered dynamically from card.config.js -->
+      </div>
+
+      <!-- Primary Action: Save Contact Button -->
+      <div id="saveContactWrapper" class="w-full mb-6">
+        <button
+          onclick="downloadVCard()"
+          id="saveContactBtn"
+          class="w-full h-14 font-bold text-sm sm:text-base rounded-2xl flex items-center justify-center gap-2.5 shadow-xl hover:opacity-90 active:scale-[0.98] transition-all duration-200 border"
+          style="background-color: var(--btn-primary-bg); color: var(--btn-primary-text); border-color: var(--btn-primary-bg);"
+        >
+          <i class="fa-solid fa-address-card text-base"></i>
+          <span id="saveContactBtnText">Save Contact to Phone</span>
+        </button>
+      </div>
+
+      <!-- SECTION: Work & Organizations -->
+      <div id="linksSectionHeader" class="w-full text-left mb-2.5">
+        <span id="linksSectionTitle" class="text-[11px] font-bold uppercase tracking-wider text-[var(--text-sub)] pl-1">Organizations & Platforms</span>
+      </div>
+
+      <!-- Links Section -->
+      <section id="linksContainer" class="w-full space-y-3 mb-6" aria-label="Social and Web Links">
+        <!-- Injected dynamically from card.config.js -->
+      </section>
+
+      <!-- Quick Copy / Contact Info Strip -->
+      <div id="quickCopyContainer" class="w-full pt-5 border-t border-[var(--border-subtle)] flex items-center justify-around text-xs text-[var(--text-sub)]">
+        <!-- Injected dynamically from card.config.js -->
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full text-center py-6 text-xs text-zinc-600 font-medium z-10">
+      <p id="footerContent">Ammar Hussein &copy; <span id="currentYear"></span> · Tap to Connect</p>
+    </footer>
+
+    <!-- In-Person QR Code Modal -->
+    <div
+      id="qrModal"
+      class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden"
+      onclick="closeQrModal()"
+    >
+      <div
+        class="border rounded-3xl p-6 max-w-[320px] w-full text-center shadow-2xl relative transition-colors duration-300"
+        style="background-color: var(--bg-surface); border-color: var(--border-subtle);"
+        onclick="event.stopPropagation()"
+      >
+        <button
+          onclick="closeQrModal()"
+          class="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--bg-card)] text-[var(--text-sub)] hover:text-[var(--text-primary)] flex items-center justify-center transition-colors active:scale-95"
+          aria-label="Close"
+        >
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+        <h3 id="qrModalTitle" class="text-base font-bold text-[var(--text-primary)] mb-1">Scan Contact</h3>
+        <p id="qrModalSubtitle" class="text-xs text-[var(--text-sub)] mb-4">Point phone camera to open card</p>
+        <div class="p-3.5 bg-white rounded-2xl inline-block shadow-lg mb-3">
+          <img
+            id="modalQrCodeImage"
+            src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=2&data="
+            alt="Contact QR Code"
+            class="w-36 h-36"
+          />
+        </div>
+        <p id="qrModalName" class="text-[12px] font-semibold text-[var(--text-primary)] mb-0.5">Ammar Hussein</p>
+        <div id="qrModalOrgContainer" class="flex items-center justify-center gap-1.5 text-[11px] text-[var(--text-sub)]">
+          <img
+            id="qrModalLogo"
+            src="/assets/aistudio/logo__1__24eed6e2.png"
+            alt="Organization Logo"
+            class="w-3.5 h-3.5 object-contain"
+            onerror="this.src='/public/assets/aistudio/logo__1__24eed6e2.png';"
+          />
+          <span id="qrModalOrgText">Muslim Association of Meru Univ.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Email Options Modal -->
+    <div
+      id="emailModal"
+      class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden"
+      onclick="closeEmailModal()"
+    >
+      <div
+        class="border rounded-3xl p-6 max-w-[340px] w-full text-center shadow-2xl relative transition-colors duration-300"
+        style="background-color: var(--bg-surface); border-color: var(--border-subtle);"
+        onclick="event.stopPropagation()"
+      >
+        <button
+          onclick="closeEmailModal()"
+          class="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--bg-card)] text-[var(--text-sub)] hover:text-[var(--text-primary)] flex items-center justify-center transition-colors active:scale-95"
+          aria-label="Close"
+        >
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+
+        <div class="w-12 h-12 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-subtle)] flex items-center justify-center mx-auto mb-3 text-[var(--accent-gold)]">
+          <i class="fa-solid fa-envelope text-xl"></i>
+        </div>
+
+        <h3 id="emailModalTitle" class="text-base font-bold text-[var(--text-primary)] mb-1">Send Email</h3>
+        <p id="emailModalAddress" class="text-xs text-[var(--text-sub)] mb-4 font-mono select-all">ammaarmohamed93@gmail.com</p>
+
+        <div class="space-y-2.5">
+          <!-- 1. Gmail Web Compose -->
+          <a
+            id="emailModalGmailLink"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=ammaarmohamed93@gmail.com&su=Connecting%20via%20Digital%20Card"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick="closeEmailModal();"
+            class="w-full py-3.5 px-4 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 active:scale-95 transition-all shadow-md"
+            style="background-color: var(--btn-primary-bg); color: var(--btn-primary-text);"
+          >
+            <i class="fa-brands fa-google text-xs"></i>
+            <span>Compose in Gmail Web</span>
+          </a>
+
+          <!-- 2. Copy Email Address -->
+          <button
+            type="button"
+            id="emailModalCopyBtn"
+            onclick="handleEmailModalCopy()"
+            class="w-full py-3 px-4 rounded-xl bg-[var(--bg-card)] border border-[var(--border-subtle)] text-[var(--text-primary)] font-semibold text-xs flex items-center justify-center gap-2 hover:border-[var(--border-hover)] active:scale-95 transition-all"
+          >
+            <i class="fa-regular fa-copy text-xs"></i>
+            <span>Copy Email Address</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette Theme Picker Modal -->
+    <div
+      id="paletteModal"
+      class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden"
+      onclick="closePaletteModal()"
+    >
+      <div
+        class="border rounded-3xl p-6 max-w-[340px] w-full text-center shadow-2xl relative transition-colors duration-300"
+        style="background-color: var(--bg-surface); border-color: var(--border-subtle);"
+        onclick="event.stopPropagation()"
+      >
+        <button
+          onclick="closePaletteModal()"
+          class="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--bg-card)] text-[var(--text-sub)] hover:text-[var(--text-primary)] flex items-center justify-center transition-colors active:scale-95"
+          aria-label="Close"
+        >
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+
+        <div class="w-12 h-12 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-subtle)] flex items-center justify-center mx-auto mb-3 text-[var(--accent-gold)]">
+          <i class="fa-solid fa-palette text-xl"></i>
+        </div>
+
+        <h3 class="text-base font-bold text-[var(--text-primary)] mb-1">Color Palette</h3>
+        <p class="text-xs text-[var(--text-sub)] mb-4">Select a style for your digital card</p>
+
+        <div class="space-y-2.5">
+          <!-- 1. Emerald & Gold -->
+          <button
+            type="button"
+            onclick="setPalette('emerald', true)"
+            class="w-full p-3 rounded-2xl border text-left flex items-center justify-between transition-all active:scale-95 hover:border-emerald-500/60"
+            style="background-color: #0e271f; border-color: rgba(52, 211, 153, 0.3);"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-xl bg-[#06130e] border border-emerald-500/40 flex items-center justify-center shadow-inner">
+                <span class="w-3.5 h-3.5 rounded-full bg-[#10b981] shadow-sm"></span>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-white flex items-center gap-1.5">
+                  <span>Emerald & Gold</span>
+                  <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-medium">Default</span>
+                </div>
+                <div class="text-[11px] text-emerald-300/80">MAMU Heritage & Executive</div>
+              </div>
+            </div>
+            <i class="fa-solid fa-circle-check text-sm text-emerald-400 palette-check hidden" data-theme-target="emerald"></i>
+          </button>
+
+          <!-- 2. Midnight Sapphire -->
+          <button
+            type="button"
+            onclick="setPalette('sapphire', true)"
+            class="w-full p-3 rounded-2xl border text-left flex items-center justify-between transition-all active:scale-95 hover:border-sky-500/60"
+            style="background-color: #112137; border-color: rgba(56, 189, 248, 0.3);"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-xl bg-[#070d17] border border-sky-500/40 flex items-center justify-center shadow-inner">
+                <span class="w-3.5 h-3.5 rounded-full bg-[#38bdf8] shadow-sm"></span>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-white">Midnight Sapphire</div>
+                <div class="text-[11px] text-sky-300/80">Aamir Digital Tech</div>
+              </div>
+            </div>
+            <i class="fa-solid fa-circle-check text-sm text-sky-400 palette-check hidden" data-theme-target="sapphire"></i>
+          </button>
+
+          <!-- 3. Warm Amber & Gold -->
+          <button
+            type="button"
+            onclick="setPalette('amber', true)"
+            class="w-full p-3 rounded-2xl border text-left flex items-center justify-between transition-all active:scale-95 hover:border-amber-500/60"
+            style="background-color: #271f1a; border-color: rgba(245, 158, 11, 0.3);"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-xl bg-[#110e0c] border border-amber-500/40 flex items-center justify-center shadow-inner">
+                <span class="w-3.5 h-3.5 rounded-full bg-[#f59e0b] shadow-sm"></span>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-white">Warm Amber & Gold</div>
+                <div class="text-[11px] text-amber-300/80">Founder Prestige</div>
+              </div>
+            </div>
+            <i class="fa-solid fa-circle-check text-sm text-amber-400 palette-check hidden" data-theme-target="amber"></i>
+          </button>
+
+          <!-- 4. Stealth Carbon -->
+          <button
+            type="button"
+            onclick="setPalette('carbon', true)"
+            class="w-full p-3 rounded-2xl border text-left flex items-center justify-between transition-all active:scale-95 hover:border-white/40"
+            style="background-color: #18181b; border-color: rgba(255, 255, 255, 0.15);"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-xl bg-[#09090b] border border-white/20 flex items-center justify-center shadow-inner">
+                <span class="w-3.5 h-3.5 rounded-full bg-white shadow-sm"></span>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-white">Stealth Carbon</div>
+                <div class="text-[11px] text-zinc-400">Minimalist Monochrome</div>
+              </div>
+            </div>
+            <i class="fa-solid fa-circle-check text-sm text-white palette-check hidden" data-theme-target="carbon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification Element -->
+    <div
+      id="toast"
+      class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none hidden"
+    >
+      <div class="bg-zinc-100 text-zinc-900 px-4 py-2.5 rounded-full shadow-2xl font-semibold text-xs flex items-center gap-2 border border-white">
+        <i class="fa-solid fa-circle-check text-emerald-600 text-sm"></i>
+        <span id="toastMessage">Action completed!</span>
+      </div>
+    </div>
+
+    <!-- Interactive Engine & Dynamic Renderer -->
+    <script>
+      // ===================================================
+      // 1. SAFE CONFIG ACCESSOR WITH FALLBACKS
+      // ===================================================
+      const CFG = window.CARD_CONFIG || {};
+
+      // Initialize Page Metadata
+      if (CFG.meta) {
+        if (CFG.meta.title) document.title = CFG.meta.title;
+        if (CFG.meta.description) {
+          const mDesc = document.getElementById('metaDescription');
+          if (mDesc) mDesc.setAttribute('content', CFG.meta.description);
+        }
+        if (CFG.meta.ogImage) {
+          const ogImg = document.getElementById('ogImage');
+          if (ogImg) ogImg.setAttribute('content', CFG.meta.ogImage);
+        }
+      }
+
+      // Initialize Footer
+      const currentYearEl = document.getElementById('currentYear');
+      if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
+      if (CFG.footer) {
+        const footEl = document.getElementById('footerContent');
+        if (footEl) {
+          const name = CFG.footer.copyrightName || (CFG.profile && CFG.profile.name) || 'Digital Card';
+          const tagline = CFG.footer.tagline || 'Tap to Connect';
+          footEl.innerHTML = `${name} &copy; <span id="currentYear">${new Date().getFullYear()}</span> · ${tagline}`;
+        }
+      }
+
+      // Render Profile Section
+      function renderProfile() {
+        const p = CFG.profile || {};
+
+        // Status Pill
+        const statusContainer = document.getElementById('statusPillContainer');
+        const statusText = document.getElementById('statusPillText');
+        if (p.statusPill && p.statusPill.enabled === false) {
+          if (statusContainer) statusContainer.style.display = 'none';
+        } else if (p.statusPill && statusText) {
+          statusText.textContent = p.statusPill.text || 'NFC Tap Verified';
+        }
+
+        // Avatar
+        const avatarImg = document.getElementById('profileAvatar');
+        const fallbackEl = document.getElementById('avatarFallback');
+        if (p.initials && fallbackEl) fallbackEl.textContent = p.initials;
+        if (p.avatar && avatarImg) {
+          avatarImg.src = p.avatar;
+          avatarImg.alt = p.name || 'Avatar';
+          avatarImg.onerror = function() {
+            if (p.avatarFallback) {
+              this.src = p.avatarFallback;
+              this.onerror = function() {
+                this.style.display = 'none';
+                if (fallbackEl) fallbackEl.classList.remove('hidden');
+              };
+            } else {
+              this.style.display = 'none';
+              if (fallbackEl) fallbackEl.classList.remove('hidden');
+            }
+          };
+        }
+
+        // Verified Checkmark
+        const verifiedBadge = document.getElementById('verifiedBadge');
+        if (verifiedBadge) {
+          verifiedBadge.style.display = p.verified === false ? 'none' : 'flex';
+        }
+
+        // Name
+        const nameEl = document.getElementById('profileName');
+        if (nameEl && p.name) nameEl.textContent = p.name;
+
+        // Roles / Tagline
+        const rolesEl = document.getElementById('profileRoles');
+        if (rolesEl) {
+          const parts = [];
+          if (p.primaryRole) {
+            parts.push(`${p.primaryRole.title || ''} at <span class="font-semibold text-[var(--text-primary)]">${p.primaryRole.company || ''}</span>`);
+          }
+          if (p.secondaryAffiliation && p.secondaryAffiliation.enabled !== false) {
+            parts.push(`${p.secondaryAffiliation.title || ''}, <span class="font-semibold text-[var(--text-primary)]">${p.secondaryAffiliation.organization || ''}</span>`);
+          }
+          if (parts.length > 0) {
+            rolesEl.innerHTML = parts.join(' <span class="text-[var(--text-sub)]">|</span> ');
+          }
+        }
+
+        // Executive Affiliation Badge with Crest
+        const affContainer = document.getElementById('affiliationBadgeContainer');
+        const affLogo = document.getElementById('affiliationBadgeLogo');
+        const affText = document.getElementById('affiliationBadgeText');
+        if (p.secondaryAffiliation && p.secondaryAffiliation.enabled !== false) {
+          if (affContainer) affContainer.style.display = 'inline-flex';
+          if (affText) affText.textContent = p.secondaryAffiliation.organization || '';
+          if (affLogo) {
+            if (p.secondaryAffiliation.logo) {
+              affLogo.src = p.secondaryAffiliation.logo;
+              affLogo.onerror = function() {
+                if (p.secondaryAffiliation.logoFallback) this.src = p.secondaryAffiliation.logoFallback;
+                else this.style.display = 'none';
+              };
+            } else {
+              affLogo.style.display = 'none';
+            }
+          }
+        } else if (affContainer) {
+          affContainer.style.display = 'none';
+        }
+
+        // Hook statement
+        const hookEl = document.getElementById('profileHook');
+        if (hookEl) {
+          if (p.hookStatement) hookEl.textContent = p.hookStatement;
+          else hookEl.style.display = 'none';
+        }
+
+        // Focus Pills
+        const pillsContainer = document.getElementById('focusPillsContainer');
+        if (pillsContainer) {
+          pillsContainer.innerHTML = '';
+          const pills = p.focusPills || [];
+          pills.forEach((pillText, idx) => {
+            if (idx > 0) {
+              const dot = document.createElement('span');
+              dot.className = 'text-[var(--text-sub)] opacity-40';
+              dot.textContent = '·';
+              pillsContainer.appendChild(dot);
+            }
+            const chip = document.createElement('span');
+            chip.className = 'px-2.5 py-1 rounded-full bg-[var(--bg-card)] border border-[var(--border-subtle)]';
+            chip.textContent = pillText;
+            pillsContainer.appendChild(chip);
+          });
+          if (pills.length === 0) pillsContainer.style.display = 'none';
+        }
+      }
+
+      // Render Action Dock (WhatsApp, Call, Email, QR)
+      function renderActionDock() {
+        const container = document.getElementById('actionDockContainer');
+        if (!container) return;
+        const actions = CFG.actions || [];
+        container.innerHTML = '';
+
+        actions.forEach(action => {
+          let btn;
+          if (action.type === 'link') {
+            btn = document.createElement('a');
+            btn.href = action.url || '#';
+            if (action.target) btn.target = action.target;
+            if (action.target === '_blank') btn.rel = 'noopener noreferrer';
+          } else {
+            btn = document.createElement('button');
+            btn.type = 'button';
+            if (action.modalId === 'emailModal') {
+              btn.onclick = openEmailModal;
+            } else if (action.modalId === 'qrModal') {
+              btn.onclick = openQrModal;
+            } else if (action.onclick) {
+              btn.setAttribute('onclick', action.onclick);
+            }
+          }
+
+          btn.className = 'flex flex-col items-center justify-center p-3 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[var(--border-hover)] hover:bg-[var(--bg-card-hover)] transition-all duration-200 active:scale-95 group shadow-sm';
+
+          const iconWrapper = document.createElement('div');
+          iconWrapper.className = `w-10 h-10 rounded-full flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform ${action.iconColorClass || 'bg-[var(--border-subtle)] text-[var(--text-primary)]'}`;
+          
+          const icon = document.createElement('i');
+          icon.className = action.iconClass || 'fa-solid fa-link';
+          iconWrapper.appendChild(icon);
+
+          const label = document.createElement('span');
+          label.className = 'text-[11px] font-semibold text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] truncate max-w-full px-0.5';
+          label.textContent = action.label || '';
+
+          btn.appendChild(iconWrapper);
+          btn.appendChild(label);
+          container.appendChild(btn);
+        });
+      }
+
+      // Render Save Contact Button & Info
+      function renderSaveContact() {
+        const v = CFG.vCard || {};
+        const wrapper = document.getElementById('saveContactWrapper');
+        const btnText = document.getElementById('saveContactBtnText');
+        if (v.enabled === false) {
+          if (wrapper) wrapper.style.display = 'none';
+        } else if (btnText && v.buttonText) {
+          btnText.textContent = v.buttonText;
+        }
+      }
+
+      // Render Featured Links Section
+      function renderLinks() {
+        const sectionHeader = document.getElementById('linksSectionHeader');
+        const sectionTitle = document.getElementById('linksSectionTitle');
+        const container = document.getElementById('linksContainer');
+        if (!container) return;
+
+        const sec = CFG.linksSection || {};
+        if (sectionTitle && sec.title) sectionTitle.textContent = sec.title;
+
+        const items = sec.items || [];
+        container.innerHTML = '';
+
+        items.forEach(item => {
+          let el;
+          if (item.type === 'modal') {
+            el = document.createElement('button');
+            el.type = 'button';
+            if (item.modalId === 'emailModal') el.onclick = openEmailModal;
+            else if (item.modalId === 'qrModal') el.onclick = openQrModal;
+          } else {
+            el = document.createElement('a');
+            el.href = item.url || '#';
+            if (item.target) el.target = item.target;
+            if (item.target === '_blank') el.rel = 'noopener noreferrer';
+          }
+
+          el.className = 'tap-card w-full p-4 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[var(--border-hover)] hover:bg-[var(--bg-card-hover)] flex items-center justify-between group transition-all duration-200 text-left';
+
+          const left = document.createElement('div');
+          left.className = 'flex items-center gap-3.5 min-w-0';
+
+          const iconBox = document.createElement('div');
+          iconBox.className = 'w-10 h-10 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] relative flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-sm overflow-hidden p-1';
+
+          if (item.logo) {
+            const img = document.createElement('img');
+            img.src = item.logo;
+            img.alt = item.title || 'Logo';
+            img.className = 'w-full h-full object-contain';
+            if (item.logoFallback) {
+              img.onerror = function() { this.src = item.logoFallback; };
+            }
+            iconBox.appendChild(img);
+
+            if (item.badgeIcon) {
+              const badge = document.createElement('div');
+              badge.className = 'absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white flex items-center justify-center text-[8px] shadow-sm';
+              badge.innerHTML = `<i class="${item.badgeIcon}"></i>`;
+              iconBox.appendChild(badge);
+            }
+          } else {
+            const icon = document.createElement('i');
+            icon.className = `${item.iconClass || 'fa-solid fa-link'} text-base`;
+            if (item.iconColorStyle) icon.setAttribute('style', item.iconColorStyle);
+            iconBox.appendChild(icon);
+          }
+
+          const textWrap = document.createElement('div');
+          textWrap.className = 'text-left truncate';
+
+          const titleEl = document.createElement('div');
+          titleEl.className = 'text-sm font-semibold text-[var(--text-primary)] tracking-tight truncate';
+          titleEl.textContent = item.title || '';
+
+          const subEl = document.createElement('div');
+          subEl.className = 'text-xs text-[var(--text-sub)] truncate';
+          subEl.textContent = item.subtitle || '';
+
+          textWrap.appendChild(titleEl);
+          textWrap.appendChild(subEl);
+          left.appendChild(iconBox);
+          left.appendChild(textWrap);
+
+          const arrow = document.createElement('i');
+          arrow.className = 'fa-solid fa-arrow-up-right-from-square text-xs text-[var(--text-sub)] group-hover:text-[var(--text-primary)] transition-colors pl-2 shrink-0';
+
+          el.appendChild(left);
+          el.appendChild(arrow);
+          container.appendChild(el);
+        });
+      }
+
+      // Render Quick Copy Strip
+      function renderQuickCopy() {
+        const container = document.getElementById('quickCopyContainer');
+        if (!container) return;
+        const strip = CFG.quickCopyStrip || [];
+        container.innerHTML = '';
+
+        strip.forEach((item, idx) => {
+          if (idx > 0) {
+            const dot = document.createElement('span');
+            dot.className = 'opacity-30';
+            dot.textContent = '·';
+            container.appendChild(dot);
+          }
+
+          const btn = document.createElement('button');
+          btn.className = 'hover:text-[var(--text-primary)] transition-colors flex items-center gap-1.5 py-1 px-2 rounded-lg hover:bg-[var(--bg-card)] active:scale-95';
+          btn.title = item.label || 'Copy';
+          btn.onclick = () => {
+            const val = item.isCurrentUrl ? window.location.href : (item.value || '');
+            copyToClipboard(val, item.toastMessage || 'Copied!');
+          };
+
+          const icon = document.createElement('i');
+          icon.className = `${item.iconClass || 'fa-regular fa-copy'} text-[11px]`;
+
+          const span = document.createElement('span');
+          span.textContent = item.label || 'Copy';
+
+          btn.appendChild(icon);
+          btn.appendChild(span);
+          container.appendChild(btn);
+        });
+      }
+
+      // Render Modals Content (Email & QR)
+      function renderModalsContent() {
+        // Email Modal
+        const em = CFG.emailModal || {};
+        const emailAddr = em.email || (CFG.contact && CFG.contact.email) || 'ammaarmohamed93@gmail.com';
+        const emAddrEl = document.getElementById('emailModalAddress');
+        if (emAddrEl) emAddrEl.textContent = emailAddr;
+
+        const emTitleEl = document.getElementById('emailModalTitle');
+        if (emTitleEl && em.title) emTitleEl.textContent = em.title;
+
+        const gmailLink = document.getElementById('emailModalGmailLink');
+        if (gmailLink) {
+          const subject = encodeURIComponent(em.gmailSubject || 'Connecting via Digital Card');
+          gmailLink.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddr)}&su=${subject}`;
+        }
+
+        // QR Modal
+        const qm = CFG.qrModal || {};
+        const qTitle = document.getElementById('qrModalTitle');
+        if (qTitle && qm.title) qTitle.textContent = qm.title;
+        const qSub = document.getElementById('qrModalSubtitle');
+        if (qSub && qm.subtitle) qSub.textContent = qm.subtitle;
+
+        const qName = document.getElementById('qrModalName');
+        if (qName) qName.textContent = qm.name || (CFG.profile && CFG.profile.name) || 'Contact';
+
+        const qOrgContainer = document.getElementById('qrModalOrgContainer');
+        const qLogo = document.getElementById('qrModalLogo');
+        const qOrg = document.getElementById('qrModalOrgText');
+        if (qm.organization && qOrg) {
+          qOrg.textContent = qm.organization;
+          if (qm.logo && qLogo) {
+            qLogo.src = qm.logo;
+            if (qm.logoFallback) qLogo.onerror = function() { this.src = qm.logoFallback; };
+          } else if (qLogo) {
+            qLogo.style.display = 'none';
+          }
+        } else if (qOrgContainer) {
+          qOrgContainer.style.display = 'none';
+        }
+      }
+
+      function handleEmailModalCopy() {
+        const em = CFG.emailModal || {};
+        const addr = em.email || (CFG.contact && CFG.contact.email) || 'ammaarmohamed93@gmail.com';
+        copyToClipboard(addr, 'Email copied to clipboard!');
+        closeEmailModal();
+      }
+
+      // ===================================================
+      // 2. MODALS & INTERACTIONS
+      // ===================================================
+      function openQrModal() {
+        const modal = document.getElementById('qrModal');
+        const modalQr = document.getElementById('modalQrCodeImage');
+        if (modalQr) {
+          modalQr.src = 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=2&data=' + encodeURIComponent(window.location.href);
+        }
+        if (modal) modal.classList.remove('hidden');
+      }
+
+      function closeQrModal() {
+        const modal = document.getElementById('qrModal');
+        if (modal) modal.classList.add('hidden');
+      }
+
+      function openEmailModal() {
+        const modal = document.getElementById('emailModal');
+        if (modal) modal.classList.remove('hidden');
+      }
+
+      function closeEmailModal() {
+        const modal = document.getElementById('emailModal');
+        if (modal) modal.classList.add('hidden');
+      }
+
+      let toastTimeout = null;
+      function showToast(message) {
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+        if (!toast || !toastMessage) return;
+        toastMessage.textContent = message;
+        
+        toast.classList.remove('hidden', 'toast-exit');
+        toast.classList.add('toast-enter');
+
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toast.classList.remove('toast-enter');
+          toast.classList.add('toast-exit');
+          setTimeout(() => {
+            toast.classList.add('hidden');
+            toast.classList.remove('toast-exit');
+          }, 200);
+        }, 2200);
+      }
+
+      function copyToClipboard(text, successMsg) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            showToast(successMsg || 'Copied to clipboard!');
+          }).catch(() => {
+            fallbackCopy(text, successMsg);
+          });
+        } else {
+          fallbackCopy(text, successMsg);
+        }
+      }
+
+      function fallbackCopy(text, successMsg) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          document.execCommand('copy');
+          showToast(successMsg || 'Copied to clipboard!');
+        } catch (e) {
+          showToast('Failed to copy');
+        }
+        document.body.removeChild(textarea);
+      }
+
+      // ===================================================
+      // 3. DYNAMIC VCARD (.VCF) GENERATOR
+      // ===================================================
+      function downloadVCard() {
+        const v = CFG.vCard || {};
+        const p = CFG.profile || {};
+        const lastName = v.lastName || '';
+        const firstName = v.firstName || (p.name || 'Contact');
+        const fullName = `${firstName} ${lastName}`.trim();
+        const filename = v.filename || `${firstName}_${lastName || 'Contact'}.vcf`;
+
+        const lines = [
+          'BEGIN:VCARD',
+          'VERSION:3.0',
+          `N:${lastName};${firstName};;;`,
+          `FN:${fullName}`
+        ];
+
+        if (v.organization) {
+          lines.push(`ORG:${v.organization}`);
+        }
+        if (v.title) {
+          lines.push(`TITLE:${v.title}`);
+        }
+
+        (v.phones || []).forEach(ph => {
+          lines.push(`TEL;type=${ph.type || 'CELL,type=VOICE'}:${ph.number}`);
+        });
+
+        (v.emails || []).forEach(em => {
+          lines.push(`EMAIL;type=${em.type || 'INTERNET,type=pref'}:${em.address}`);
+        });
+
+        (v.urls || []).forEach(u => {
+          lines.push(`URL;type=${u.type || 'WORK'}:${u.url}`);
+        });
+
+        (v.socialProfiles || []).forEach(sp => {
+          lines.push(`X-SOCIALPROFILE;type=${sp.type}:${sp.url}`);
+        });
+
+        if (v.note) {
+          lines.push(`NOTE:${v.note}`);
+        }
+
+        lines.push('END:VCARD');
+
+        const vCardData = lines.join('\r\n');
+        const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', filename);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+
+        showToast('Saving contact card...');
+      }
+
+      // ===================================================
+      // 4. NATIVE WEB SHARE API
+      // ===================================================
+      function shareCard() {
+        const p = CFG.profile || {};
+        const shareData = {
+          title: CFG.meta?.title || `${p.name || 'Contact'} - Digital Business Card`,
+          text: `Connect with ${p.name || 'me'} (${p.hookStatement || (CFG.meta && CFG.meta.description) || ''})`,
+          url: window.location.href,
+        };
+
+        if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+          navigator.share(shareData).catch((err) => {
+            if (err.name !== 'AbortError') {
+              copyToClipboard(window.location.href, 'Card link copied!');
+            }
+          });
+        } else {
+          copyToClipboard(window.location.href, 'Card link copied to clipboard!');
+        }
+      }
+
+      // ===================================================
+      // 5. THEME & COLOR PALETTE CONTROLLER
+      // ===================================================
+      const THEMES = {
+        emerald: 'Emerald & Gold',
+        sapphire: 'Midnight Sapphire',
+        amber: 'Warm Amber & Gold',
+        carbon: 'Stealth Carbon'
+      };
+
+      const storageKey = (CFG.theme && CFG.theme.storageKey) || 'card_theme';
+
+      function setPalette(themeName, isUserAction = false) {
+        if (!THEMES[themeName]) themeName = (CFG.theme && CFG.theme.defaultTheme) || 'emerald';
+        document.documentElement.setAttribute('data-theme', themeName);
+        document.body.setAttribute('data-theme', themeName);
+        try {
+          localStorage.setItem(storageKey, themeName);
+        } catch (e) {}
+
+        // Update active check indicators
+        document.querySelectorAll('.palette-check').forEach(el => {
+          if (el.getAttribute('data-theme-target') === themeName) {
+            el.classList.remove('hidden');
+          } else {
+            el.classList.add('hidden');
+          }
+        });
+
+        closePaletteModal();
+        if (isUserAction) {
+          showToast('Applied ' + THEMES[themeName] + ' theme');
+        }
+      }
+
+      function openPaletteModal() {
+        const modal = document.getElementById('paletteModal');
+        if (modal) modal.classList.remove('hidden');
+      }
+
+      function closePaletteModal() {
+        const modal = document.getElementById('paletteModal');
+        if (modal) modal.classList.add('hidden');
+      }
+
+      // Initialize all dynamic elements on load
+      function initCard() {
+        renderProfile();
+        renderActionDock();
+        renderSaveContact();
+        renderLinks();
+        renderQuickCopy();
+        renderModalsContent();
+
+        // Theme init
+        let initialTheme = (CFG.theme && CFG.theme.defaultTheme) || 'emerald';
+        try {
+          initialTheme = localStorage.getItem(storageKey) || initialTheme;
+        } catch (e) {}
+        setPalette(initialTheme, false);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCard);
+      } else {
+        initCard();
+      }
+    </script>
+  </body>
+</html>
