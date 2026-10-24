@@ -48,11 +48,14 @@ Users viewing the card can also tap the **"Theme"** button in the top action bar
 ## 📁 File Structure
 
 ```text
-├── card.config.js          # The active card configuration (Edit this!)
-├── card.config.template.js # Blank starter template for creating new profiles
-├── index.html              # The core rendering engine, themes, modals & UI
-├── public/                 # Static assets, logos, and photos
+├── public/                 # Static assets copied to dist during build
+│   ├── card.config.js      # Card configuration (Loaded by web app)
+│   ├── card.config.template.js # Blank starter template for new profiles
+│   ├── sw.js               # Service Worker for offline / fast cache
 │   └── assets/             # Profile photos, organization crests
+├── card.config.js          # Root mirror of card configuration
+├── index.html              # The core rendering engine, themes, modals & UI
+├── netlify.toml            # Pre-configured Netlify build & header settings
 └── README.md               # Documentation and guides
 ```
 
@@ -69,8 +72,10 @@ Because this template is completely static, it can be hosted for free anywhere:
 4. Your card is live at `https://<username>.github.io/<repo-name>/`.
 
 ### Netlify
-1. Drag and drop the folder into [Netlify Drop](https://app.netlify.com/drop).
-2. Or link your GitHub repository (Build Command: leave empty, Publish Directory: `.`).
+- **Automatic (Recommended)**: Netlify automatically reads the included `netlify.toml`.
+  - Build command: `npm run build`
+  - Publish directory: `dist`
+- **Manual / Netlify Drop**: If dragging and dropping or deploying without build tools, upload the `dist` folder after running `npm run build`, or edit `public/card.config.js`.
 
 ### Vercel
 1. Import the Git repository in Vercel.
